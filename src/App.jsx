@@ -29,3 +29,31 @@ function App() {
 }
 
 export default App
+
+import { useState, useEffect } from "react";
+import "./index.css";
+
+function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.body.className = darkMode ? "dark" : "light";
+  }, [darkMode]);
+
+  return (
+    <div className="app">
+      <header className="p-4 flex justify-end">
+        <button
+          className="rounded-lg border px-3 py-1"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+        </button>
+      </header>
+
+      {/* El resto del contenido ya existente */}
+    </div>
+  );
+}
+
+export default App;
