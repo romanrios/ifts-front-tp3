@@ -7,8 +7,28 @@ import Integrante from "./pages/Integrante/Integrante";
 import Musica from "./pages/Musica/Musica";
 import Peliculas from "./pages/Peliculas/Peliculas";
 import Diagramas from "./pages/Diagramas/Diagramas";
+import { useState, useEffect } from "react";
+import "./index.css";
+
+
+
 function App() {
 
+  const [darkMode, setDarkMode] = useState(false);
+
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") setDarkMode(true);
+}, []);
+
+useEffect(() => {
+  document.body.classList.remove("light", "dark");
+  document.body.classList.add(darkMode ? "dark" : "light");
+  localStorage.setItem("theme", darkMode ? "dark" : "light");
+}, [darkMode]);
+
+
+  
   return (
     <div className="app">
       <Sidebar />
@@ -22,6 +42,24 @@ function App() {
           <Route path="/peliculas" element={<Peliculas />} />
           <Route path="/diagramas" element={<Diagramas />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+
+          <button
+  onClick={() => setDarkMode(!darkMode)}
+  style={{
+    position: "fixed",
+    top: "10px",
+    right: "10px",
+    padding: "8px 12px",
+    borderRadius: "8px",
+    border: "1px solid currentColor",
+    background: "transparent",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+</button>
+
         </Routes>
       </main>
     </div>
@@ -30,30 +68,3 @@ function App() {
 
 export default App
 
-import { useState, useEffect } from "react";
-import "./index.css";
-
-function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    document.body.className = darkMode ? "dark" : "light";
-  }, [darkMode]);
-
-  return (
-    <div className="app">
-      <header className="p-4 flex justify-end">
-        <button
-          className="rounded-lg border px-3 py-1"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-        </button>
-      </header>
-
-      {/* El resto del contenido ya existente */}
-    </div>
-  );
-}
-
-export default App;
