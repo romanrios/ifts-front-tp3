@@ -27,12 +27,30 @@ function App() {
   localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-
-  
+    
   return (
     <div className="app">
       <Sidebar />
       <main className="app-main">
+
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          style={{
+            position: "fixed",
+            top: "10px",
+            right: "10px",
+            padding: "8px 12px",
+            borderRadius: "8px",
+            border: "1px solid currentColor",
+            background: "transparent",
+            cursor: "pointer",
+            zIndex: 1000,
+            }}
+        >
+            {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+         </button>
+
+
         <Routes>
           <Route path="/" element={<Portada />} />
           <Route path="/bitacora" element={<Bitacora />} />
@@ -43,27 +61,12 @@ function App() {
           <Route path="/diagramas" element={<Diagramas />} />
           <Route path="*" element={<Navigate to="/" replace />} />
 
-          <button
-           onClick={() => setDarkMode(!darkMode)}
-            style={{
-              position: "fixed",
-              top: "10px",
-              right: "10px",
-              padding: "8px 12px",
-              borderRadius: "8px",
-              border: "1px solid currentColor",
-              background: "transparent",
-              cursor: "pointer",
-              zIndex: 1000,
-             }}
-            >
-             {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-          </button>
-
         </Routes>
       </main>
     </div>
   )
+
+  
 }
 
 export default App
