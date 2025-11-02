@@ -16,16 +16,16 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(false);
 
-useEffect(() => {
+    useEffect(() => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") setDarkMode(true);
-}, []);
+  }, []);
 
-useEffect(() => {
+    useEffect(() => {
   document.body.classList.remove("light", "dark");
   document.body.classList.add(darkMode ? "dark" : "light");
   localStorage.setItem("theme", darkMode ? "dark" : "light");
-}, [darkMode]);
+  }, [darkMode]);
 
 
   
@@ -44,21 +44,21 @@ useEffect(() => {
           <Route path="*" element={<Navigate to="/" replace />} />
 
           <button
-  onClick={() => setDarkMode(!darkMode)}
-  style={{
-    position: "fixed",
-    top: "10px",
-    right: "10px",
-    padding: "8px 12px",
-    borderRadius: "8px",
-    border: "1px solid currentColor",
-    background: "transparent",
-    cursor: "pointer",
-    zIndex: 1000,
-  }}
->
-  {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-</button>
+           onClick={() => setDarkMode(!darkMode)}
+            style={{
+              position: "fixed",
+              top: "10px",
+              right: "10px",
+              padding: "8px 12px",
+              borderRadius: "8px",
+              border: "1px solid currentColor",
+              background: "transparent",
+              cursor: "pointer",
+              zIndex: 1000,
+             }}
+            >
+             {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+          </button>
 
         </Routes>
       </main>
