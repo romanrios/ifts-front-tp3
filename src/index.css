@@ -68,7 +68,7 @@ body.light {
 
 body.dark {
   background-color: #2f2f2f; /* gris oscuro */
-  color: #f0f0f0;
+  color: #d30202;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

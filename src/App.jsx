@@ -9,6 +9,7 @@ import Peliculas from "./pages/Peliculas/Peliculas";
 import Diagramas from "./pages/Diagramas/Diagramas";
 import { useState, useEffect } from "react";
 import "./index.css";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -62,6 +63,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
 
         </Routes>
+
+        <Footer />
       </main>
     </div>
   )
