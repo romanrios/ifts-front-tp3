@@ -3,12 +3,13 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    height: 20rem;
+    min-height: 20rem; /* cambia height por min-height */
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible; /* permite que el título sobresalga si es necesario */
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .Titulo {
     background-color: white;
