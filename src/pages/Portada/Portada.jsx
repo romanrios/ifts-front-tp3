@@ -27,6 +27,8 @@ function Portada() {
           habilidades
         </li>
       </ul>
+
+      <br/>
     </>
   );
 }
