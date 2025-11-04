@@ -52,7 +52,6 @@
 .paginationInfo p {
     font-size: 1.1em;
     font-weight: 500;
-    color: #333; 
 }
 
 /* Estilo para los botones Anterior/Siguiente */
@@ -86,7 +85,6 @@
 
 .paginationInfo p {
     font-size: 1.1em;
-    color: #444; 
     line-height: 1.5;
 }
 

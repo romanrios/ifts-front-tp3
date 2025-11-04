@@ -11,7 +11,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Link: github.com/romanrios/ifts-front-tp3
+          Repositorio: github.com/romanrios/ifts-front-tp3
         </a>
       </p>
     </footer>
