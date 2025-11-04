@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Portada from "./pages/Portada/Portada";
 import Bitacora from "./pages/Bitacora/Bitacora";
@@ -7,50 +8,32 @@ import Integrante from "./pages/Integrante/Integrante";
 import Musica from "./pages/Musica/Musica";
 import Peliculas from "./pages/Peliculas/Peliculas";
 import Diagramas from "./pages/Diagramas/Diagramas";
-import { useState, useEffect } from "react";
-import "./index.css";
 import Footer from "./components/Footer/Footer";
-
-
+import "./index.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    // Carga inicial desde localStorage solo una vez
+    return localStorage.getItem("theme") === "dark";
+  });
 
-  const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") setDarkMode(true);
-  }, []);
-
-    useEffect(() => {
-  document.body.classList.remove("light", "dark");
-  document.body.classList.add(darkMode ? "dark" : "light");
-  localStorage.setItem("theme", darkMode ? "dark" : "light");
+  // Aplica el tema al body y guarda en localStorage
+  useEffect(() => {
+    const theme = darkMode ? "dark" : "light";
+    document.body.className = theme;
+    localStorage.setItem("theme", theme);
   }, [darkMode]);
 
-    
   return (
     <div className="app">
       <Sidebar />
       <main className="app-main">
-
         <button
           onClick={() => setDarkMode(!darkMode)}
-          style={{
-            position: "fixed",
-            top: "10px",
-            right: "10px",
-            padding: "8px 12px",
-            borderRadius: "8px",
-            border: "1px solid currentColor",
-            background: "transparent",
-            cursor: "pointer",
-            zIndex: 1000,
-            }}
+          className={`theme-toggle ${darkMode ? "dark-btn" : "light-btn"}`}
         >
-            {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-         </button>
-
+          {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+        </button>
 
         <Routes>
           <Route path="/" element={<Portada />} />
@@ -61,16 +44,12 @@ function App() {
           <Route path="/peliculas" element={<Peliculas />} />
           <Route path="/diagramas" element={<Diagramas />} />
           <Route path="*" element={<Navigate to="/" replace />} />
-
         </Routes>
 
         <Footer />
       </main>
     </div>
-  )
-
-  
+  );
 }
 
-export default App
-
+export default App;
