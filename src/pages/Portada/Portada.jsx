@@ -1,4 +1,5 @@
 import styles from "./Portada.module.css";
+import Carrusel from "../../components/Carrusel/Carrusel";
 
 function Portada() {
   const containerStyle = {
@@ -28,6 +29,9 @@ function Portada() {
         </li>
       </ul>
 
+      {/* Carrusel con Proyectos */}
+      <h2 style={{ marginTop: '40px', textAlign: 'center' }}>Nuestros proyectos</h2>
+      <Carrusel />
       <br/>
     </>
   );
