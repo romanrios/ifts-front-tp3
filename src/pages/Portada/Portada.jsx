@@ -24,7 +24,7 @@ function Portada() {
           ayudándonos mutuamente
         </li>
         <li>
-          Todos venimos de ramas muy diferentes y aportamos diferentes
+          Todos venimos de ramas muy distintas y aportamos diferentes
           habilidades
         </li>
       </ul>
