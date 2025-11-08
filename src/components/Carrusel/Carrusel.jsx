@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { proyectos } from '../../data/proyectos'; 
 import styles from './Carrusel.module.css';
 
