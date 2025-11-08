@@ -9,6 +9,7 @@ import Musica from "./pages/Musica/Musica";
 import Peliculas from "./pages/Peliculas/Peliculas";
 import Diagramas from "./pages/Diagramas/Diagramas";
 import Footer from "./components/Footer/Footer";
+import ScrollToTopButton from "./components/TopButton/ScrollToTopButton";
 import "./index.css";
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
 
         <Footer />
       </main>
+
+      <ScrollToTopButton />
+      
     </div>
   );
 }
