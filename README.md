@@ -1,5 +1,5 @@
 # IFTS · Frontend · Grupo 2  
-### Trabajo Práctico Grupal 2 · Proyecto Web en Equipo
+### Trabajo Práctico Grupal 3 · Proyecto Web en Equipo
 
 ---
 
@@ -18,7 +18,7 @@ Sitio web grupal desarrollado como **TP2 de Frontend**, utilizando React y Vite.
 ---
 
 ## Enlace al Proyecto Desplegado
-🔗 [https://ifts-front-tp2.vercel.app/](https://ifts-front-tp2.vercel.app/)
+🔗 [https://ifts-front-tp3.vercel.app/](https://ifts-front-tp3.vercel.app/)
 
 ---
 
@@ -49,7 +49,7 @@ npm run preview
 ```
 ### 5. Estructura de Archivos
 ```bash
-ifts-front-tp2/
+ifts-front-tp3/
 │
 ├── public/
 │   └── [ imágenes ]
