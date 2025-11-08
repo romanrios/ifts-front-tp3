@@ -30,8 +30,8 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     display: flex;
     width: 95%;
-    min-height: 450px; 
     overflow: hidden;
+    height: auto;
 }
 
 .projectImageFull {
@@ -48,18 +48,20 @@
     background: rgba(248, 155, 189, 0.9); 
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     cursor: pointer;
     z-index: 10;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 50%;
     line-height: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s;
+    transition: transform 0.1s ease-out, background-color 0.2s;
 }
 
-.navButton:hover {
-    background-color: rgb(248, 155, 189);
+.navButton:active {
+    transform: translateY(-50%) scale(0.9); 
+    background-color: rgb(151, 156, 216);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .prev { left: 10px; } 
@@ -97,4 +99,24 @@
 }
 :global(.dark-mode) .navButton {
     background: rgba(248, 155, 189, 0.7);
+}
+
+@media (max-width: 600px) {
+    
+    .navButton {
+        padding: 5px 8px; 
+        font-size: 1rem;
+        background: rgba(248, 155, 189, 0.7); 
+    }
+    
+    .prev { left: 5px; } 
+    .next { right: 5px; }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+    .activeDot {
+        transform: scale(1.1);
+    }
 }
