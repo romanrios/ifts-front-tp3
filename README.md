@@ -122,10 +122,12 @@ ifts-front-tp3/
 └── vite.config.js
 ```
 
-## Mejoras web front end
+---
+
+# Mejoras web front end
 
 
-### Reproductor de música Spotify
+## Reproductor de música Spotify
 
 En la sección de canciones se creó una lista de reproducción de las mismas y se embebió el reproductor de spotify con la lista dentro de la página, permitiendo la reproducción de las canciones que se encontraban mencionadas dentro de la web. Esto se realizó mediante una función integrada de esta plataforma:
 
@@ -201,19 +203,3 @@ Indicadores (Dots): Para saltar directamente a un proyecto específico.
 A través de un componente se agregó un pequeño botón en la esquina inferior derecha, que solo aparece cuando el usuario ha hecho scroll hacia abajo en la página. La función detecta si el scroll vertical es mayor a 300px, muestra el botón. Al hacer clic, la página vuelve hacia arriba.
 
 <img width="1877" height="858" alt="image4" src="https://github.com/user-attachments/assets/b3ac0989-21e3-43e5-bc72-25b683c7b898" />
-
-
-
-
-
-
-
-
-
-
-
-
-Botón "Volver Arriba"
-
-A través de un componente se agregó un pequeño botón en la esquina inferior derecha, que solo aparece cuando el usuario ha hecho scroll hacia abajo en la página. La función detecta si el scroll vertical es mayor a 300px, muestra el botón. Al hacer clic, la página vuelve hacia arriba.
-
