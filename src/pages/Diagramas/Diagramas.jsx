@@ -30,13 +30,20 @@ ifts-front-tp2/
 │   │   ├── CardPelicula/
 │   │   │   ├── CardPelicula.jsx
 │   │   │   └── CardPelicula.module.css
+│   │   ├── Carrusel/
+│   │   │   ├── Carrusel.jsx
+│   │   │   └── Carrusel.module.css
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Footer.module.css
 │   │   └── Sidebar/
 │   │       ├── Sidebar.jsx
 │   │       └── Sidebar.module.css
 │   │
 │   ├── data/              # archivos de datos / JSON
 │   │   ├── integrantes.js
-│   │   └── musica.json
+│   │   ├── musica.json
+│   │   └── proyectos.js
 │   │
 │   └── pages/             # vistas / páginas
 │       ├── Bitacora/
